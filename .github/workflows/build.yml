@@ -21,6 +21,8 @@ jobs:
       
       - name: Install Angular CLI
         run: npm install @angular/cdk@10.2.7
+      - name: Uninstall Angular Common
+        run: npm uninstall @angular/common@13.3.12
       - name: Install Angular Common
         run: npm install @angular/common@11.2.14
 
