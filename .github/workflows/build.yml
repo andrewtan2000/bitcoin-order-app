@@ -20,7 +20,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install Angular CLI
         run: |
-          npm install -g @angular/cli@"1.0.0-beta.28.3"
+          npm install -g @angular/cli@"15.2.4"
       - name: Cache node modules
         id: cache-nodemodules
         uses: actions/cache@v2
