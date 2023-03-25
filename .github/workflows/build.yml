@@ -38,7 +38,10 @@ jobs:
       - name: Build
         run: |
           npm run build --force
-      - name: ng add
+      - name: Install Angular CLI
+        run: |
+          npm install -g @angular/cli@"1.0.0-beta.28.3"
+      - name: Ng Add Lint
         run: |
           ng add @angular-eslint/schematics@"0.0.1-alpha.24" --skip-confirmation
       - name: Run Lint
