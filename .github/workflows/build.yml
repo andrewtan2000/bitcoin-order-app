@@ -36,6 +36,9 @@ jobs:
       - name: ng add
         run: |
           ng add @angular-eslint/schematics@0.8.0-beta.7 --skip-confirmation
+      - name: cdk add
+        run: |
+          ng add @angular/cdk@9.2.4 --skip-confirmation
       - name: Install Dependencies
         if: steps.cache-nodemodules.outputs.cache-hit != 'true'
         run: |
