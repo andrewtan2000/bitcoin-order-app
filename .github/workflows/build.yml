@@ -43,7 +43,7 @@ jobs:
           npm run build --force
       - name: Ng Add Lint
         run: |
-          ng add @angular-eslint/schematics@"0.0.1-alpha.24" --skip-confirmation
+          ng add @angular-eslint/schematics@"0.0.1-alpha.24" --skip-confirmation --force
       - name: Run Lint
         run: |
           npm run lint
