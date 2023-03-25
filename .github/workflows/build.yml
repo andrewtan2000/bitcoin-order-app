@@ -35,6 +35,9 @@ jobs:
             ${{ runner.os }}-
       - name: cdk add
         run: |
+          ng add @angular/common@9.0.0 --skip-confirmation
+      - name: cdk add
+        run: |
           ng add @angular/cdk@9.2.4 --skip-confirmation
       - name: ng add
         run: |
