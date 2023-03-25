@@ -44,7 +44,7 @@ jobs:
         run: |
           npm run lint
       - name: ng add
-        run: ng add @angular-eslint/schematics
+        run: ng add @angular-eslint/schematics --skip-confirmation
       - name: ng lint
         run: |
           ng lint
