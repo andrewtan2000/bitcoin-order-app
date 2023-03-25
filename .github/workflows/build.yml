@@ -43,6 +43,8 @@ jobs:
       - name: Lint
         run: |
           npm run lint
+      - name: ng add
+        run: ng add @angular-eslint/schematics
       - name: ng lint
         run: |
           ng lint
