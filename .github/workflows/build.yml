@@ -33,6 +33,9 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
+      - name: ng add
+        run: |
+          ng add @angular-eslint/schematics@11.2.0 --skip-confirmation
       - name: Install Dependencies
         if: steps.cache-nodemodules.outputs.cache-hit != 'true'
         run: |
@@ -43,9 +46,6 @@ jobs:
       - name: Lint
         run: |
           npm run lint
-      - name: ng add
-        run: |
-          ng add @angular-eslint/schematics@4.3.0 --skip-confirmation
       - name: ng lint
         run: |
           ng lint
