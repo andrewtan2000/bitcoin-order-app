@@ -18,17 +18,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Check Angular CDK version
-        run: npm list @angular/cdk
-      - name: Uninstall Angular CLI
-        run: npm uninstall @angular/cdk@13.3.12
       - name: Install Angular CLI
-        run: npm install @angular/cdk@10.2.7
-      - name: Uninstall Angular Common
-        run: npm uninstall @angular/common@13.3.12
-      - name: Install Angular Common
-        run: npm install @angular/common@11.2.14
-
+        run: npm install -g @angular/cli@8.3.6
       - name: Cache node modules
         id: cache-nodemodules
         uses: actions/cache@v2
