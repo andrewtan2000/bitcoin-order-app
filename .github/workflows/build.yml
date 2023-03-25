@@ -18,7 +18,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      
+      - name: Uninstall Angular CLI
+        run: npm uninstall @angular/common@13.3.12
       - name: Install Angular CLI
         run: npm install @angular/cdk@10.2.7
       - name: Uninstall Angular Common
