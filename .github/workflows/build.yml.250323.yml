@@ -18,6 +18,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Install Angular CLI
+        run: npm install -g @angular/cli@8.3.6
+      - name: Install Angular CLI
+        run: npm install zone.js@0.10.2
       - name: Cache node modules
         id: cache-nodemodules
         uses: actions/cache@v2
@@ -31,6 +35,18 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
+      - name: cdk add
+        run: |
+          ng add @angular/core@9.0.0 --skip-confirmation
+      - name: cdk add
+        run: |
+          ng add @angular/common@9.0.0 --skip-confirmation
+      - name: cdk add
+        run: |
+          ng add @angular/cdk@9.2.4 --skip-confirmation
+      - name: ng add
+        run: |
+          ng add @angular-eslint/schematics@0.8.0-beta.7 --skip-confirmation
       - name: Install Dependencies
         if: steps.cache-nodemodules.outputs.cache-hit != 'true'
         run: |
@@ -39,6 +55,9 @@ jobs:
         run: |
           npm run build --force
       - name: Lint
+        run: |
+          npm run lint
+      - name: ng lint
         run: |
           ng lint
       - name: Audit 
